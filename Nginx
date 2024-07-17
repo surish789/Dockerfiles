@@ -1,0 +1,13 @@
+FROM ubuntu:latest
+
+MAINTAINER Pavan "loverboy@gmail.com"
+
+LABEL dob="1998-08-25"
+
+RUN apt-get update -y && \
+    apt-get install -y nginx && \
+    apt-get clean -y
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+EXPOSE 80
